@@ -12,8 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import com.example.trackinglivreur.Commande;
-import com.example.trackinglivreur.CommandeDAO;
+import com.example.trackinglivreur.Crédit;
+import com.example.trackinglivreur.CréditDAO;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -114,6 +114,22 @@ public class CréditsController implements Initializable{
 
         return listfx ;
     }
+    @FXML
+    protected void onDeleteButtonClick4(ActionEvent event) {
+        try {
+            CréditDAO créditDAO = new CréditDAO();
+
+            Crédit selectedrow = mytable4.getSelectionModel().getSelectedItem();
+
+
+            créditDAO.delete(selectedrow);
+            UpdateTable4();
+
+
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }};
+
 
 
 

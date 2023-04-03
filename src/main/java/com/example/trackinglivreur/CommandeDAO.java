@@ -35,6 +35,18 @@ public class CommandeDAO extends BaseDAO<Commande>{
     @Override
     public void delete(Commande object) throws SQLException {
 
+        String request = "DELETE FROM commande WHERE N_Commande = ?";
+
+        // mapping objet table
+
+        this.preparedStatement = this.conn.prepareStatement(request);
+        // mapping
+        this.preparedStatement.setInt(1 , object.getNuméroCommande());
+
+
+
+
+        this.preparedStatement.execute();
     }
 
     @Override

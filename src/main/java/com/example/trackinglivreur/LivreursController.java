@@ -69,6 +69,7 @@ public class LivreursController implements Initializable{
     }
 
 
+
     public void UpdateTable1(){
         col_id.setCellValueFactory(new PropertyValueFactory<Livreur,Long>("id_livreur"));
         col_nom.setCellValueFactory(new PropertyValueFactory<Livreur,String>("nom"));
@@ -105,10 +106,29 @@ public class LivreursController implements Initializable{
         AnchorPane pane  = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
         livreurpane.getChildren().setAll(pane);
     }
+    @FXML
+    protected void onDeleteButtonClick1(ActionEvent event) {
+        try {
+        LivreurDAO livreurDAO = new LivreurDAO();
+
+        Livreur selectedrow = mytable1.getSelectionModel().getSelectedItem();
+
+
+        livreurDAO.delete(selectedrow);
+            UpdateTable1();
+
+
+    }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }};
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         UpdateTable1();
 
     }
+
+
 }

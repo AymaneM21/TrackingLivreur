@@ -1,5 +1,9 @@
 package com.example.trackinglivreur;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,19 @@ public class ProduitDAO extends BaseDAO<Produit>{
     @Override
     public void delete(Produit object) throws SQLException {
 
+
+        String request = "DELETE FROM produit WHERE nom_produit = ?";
+
+        // mapping objet table
+
+        this.preparedStatement = this.conn.prepareStatement(request);
+        // mapping
+        this.preparedStatement.setString(1 , object.getNomProduit());
+
+
+
+
+        this.preparedStatement.execute();
     }
 
     @Override

@@ -29,7 +29,7 @@ public abstract class BaseDAO <T> {
 
     public abstract void update( T object ) throws SQLException ;
 
-    public abstract void delete( T object ) throws SQLException ;
+    public abstract void delete(T object) throws SQLException ;
 
 
     public abstract List<T> getAll(  ) throws SQLException ;

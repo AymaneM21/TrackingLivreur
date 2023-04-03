@@ -12,8 +12,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import com.example.trackinglivreur.Commande;
-import com.example.trackinglivreur.CommandeDAO;
+import com.example.trackinglivreur.Produit;
+import com.example.trackinglivreur.ProduitDAO;
 import javafx.scene.layout.AnchorPane;
 
 
@@ -113,6 +113,21 @@ public class ProduitsController implements Initializable {
 
         return listfx ;
     }
+    @FXML
+    protected void onDeleteButtonClick3(ActionEvent event) {
+        try {
+            ProduitDAO produitDAO = new ProduitDAO();
+
+            Produit selectedrow = mytable3.getSelectionModel().getSelectedItem();
+
+
+            produitDAO.delete(selectedrow);
+            UpdateTable3();
+
+
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }};
 
 
 

@@ -16,11 +16,11 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <children>
-        <Label layoutX="64.0" layoutY="89.0" text="Nom :" />
-        <TextField fx:id="nom" layoutX="58.0" layoutY="112.0" />
-        <Label layoutX="286.0" layoutY="89.0" text="Telephone :" />
-        <TextField fx:id="tele" layoutX="280.0" layoutY="112.0" />
-        <Button fx:id="ok" layoutX="458.0" layoutY="112.0" mnemonicParsing="false" onAction="#onSaveButtonClick1" text="Save" />
+        <Label layoutX="22.0" layoutY="89.0" text="Nom :" />
+        <TextField fx:id="nom" layoutX="23.0" layoutY="112.0" />
+        <Label layoutX="205.0" layoutY="89.0" text="Telephone :" />
+        <TextField fx:id="tele" layoutX="205.0" layoutY="112.0" />
+        <Button fx:id="ok" layoutX="396.0" layoutY="112.0" mnemonicParsing="false" onAction="#onSaveButtonClick1" text="Save" />
         <TableView fx:id="mytable1" layoutX="80.0" layoutY="158.0" prefHeight="200.0" prefWidth="384.0">
             <columns>
                 <TableColumn fx:id="col_id" prefWidth="75.0" text="id" />
@@ -40,6 +40,7 @@
          </image>
       </ImageView>
       <Button layoutX="38.0" layoutY="22.0" mnemonicParsing="false" onAction="#RetourMenu" text="Retour MENU" />
+      <Button layoutX="450.0" layoutY="112.0" mnemonicParsing="false" onAction="#onDeleteButtonClick1" text="Delete" />
     </children>
 
 

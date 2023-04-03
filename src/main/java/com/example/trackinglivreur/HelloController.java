@@ -12,8 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import com.example.trackinglivreur.Livreur;
-import com.example.trackinglivreur.LivreurDAO;
+
 import javafx.scene.layout.AnchorPane;
 
 

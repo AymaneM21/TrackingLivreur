@@ -112,6 +112,21 @@ public class CommandesController implements Initializable {
 
         return listfx ;
     }
+    @FXML
+    protected void onDeleteButtonClick2(ActionEvent event) {
+        try {
+            CommandeDAO commandeDAO = new CommandeDAO();
+
+            Commande selectedrow = mytable2.getSelectionModel().getSelectedItem();
+
+
+            commandeDAO.delete(selectedrow);
+            UpdateTable2();
+
+
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }};
 
 
 

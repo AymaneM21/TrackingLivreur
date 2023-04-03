@@ -1,5 +1,10 @@
 package com.example.trackinglivreur;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,11 +36,24 @@ public class LivreurDAO extends BaseDAO<Livreur>{
     public void update(Livreur object) throws SQLException {
 
     }
-
     @Override
     public void delete(Livreur object) throws SQLException {
 
-    }
+
+            String request = "DELETE FROM livreur WHERE nom_livreur = ?";
+
+            // mapping objet table
+
+            this.preparedStatement = this.conn.prepareStatement(request);
+            // mapping
+            this.preparedStatement.setString(1 , object.getNom());
+
+
+
+
+            this.preparedStatement.execute();
+        }
+
 
     @Override
     public List<Livreur> getAll()  throws SQLException {

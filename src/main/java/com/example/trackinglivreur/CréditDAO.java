@@ -37,6 +37,18 @@ public class CréditDAO extends BaseDAO<Crédit>{
     @Override
     public void delete(Crédit object) throws SQLException {
 
+        String request = "DELETE FROM crédit WHERE Montant = ?";
+
+        // mapping objet table
+
+        this.preparedStatement = this.conn.prepareStatement(request);
+        // mapping
+        this.preparedStatement.setString(1 , object.getMontant());
+
+
+
+
+        this.preparedStatement.execute();
     }
 
     @Override
