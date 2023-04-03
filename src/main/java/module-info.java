@@ -7,4 +7,7 @@ module com.example.trackinglivreur {
 
     opens com.example.trackinglivreur to javafx.fxml;
     exports com.example.trackinglivreur;
+
+    requires java.sql;
+
 }
